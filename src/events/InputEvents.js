@@ -13,6 +13,7 @@ class InputEvents extends Component {
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnMouseDown = this.handleOnMouseDown.bind(this);
     this.handleOnMouseUp = this.handleOnMouseUp.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   handleOnClick() {
@@ -35,6 +36,19 @@ class InputEvents extends Component {
     });
   }
 
+  handleOnChange(e) {
+    this.setState({
+      inputText: e.target.value
+    });
+  }
+
+  handleOnSubmit = e => {
+    e.preventDefault();
+    this.setState({
+      formInputTextSubmitted: this.state.formInputText
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -53,13 +67,17 @@ class InputEvents extends Component {
 
         <section>
           <h3>Input change events:</h3>
-          <input type='text' value={this.state.inputText} />
+          <input
+            type='text'
+            value={this.state.inputText}
+            onChange={this.handleOnChange}
+          />
           <p>Input value: {this.state.inputText}</p>
         </section>
 
         <section>
           <h3>Form Submit events:</h3>
-          <form>
+          <form onSubmit={this.handleOnSubmit}>
             <input type='text' value={this.state.formInputText} />
             <button type='submit'>Submit</button>
             <p>Input value: {this.state.formInputText}</p>
