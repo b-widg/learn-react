@@ -1,0 +1,18 @@
+body {
+  background-color: #e6f3ff;
+  font-family: Helvetica;
+}
+
+.card-container {
+  background-color: #fff;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  overflow: hidden;
+  max-width: 300px;
+  margin: 100px auto;
+  box-shadow: 0 10px 40px -14px rgba(135, 144, 158, 0.06),
+    0 10px 40px -10px rgba(135, 144, 158, 0.6);
+}
