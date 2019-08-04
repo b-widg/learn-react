@@ -5,6 +5,7 @@ import './App.css';
 import './Card.css';
 import './events/Events.css';
 import MovementEvents from './events/MovementEvents.js';
+import FormValidation from './FormValidation.js';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Card />
       <InputEvents />
       <MovementEvents />
+      <FormValidation />
     </div>
   );
 }
