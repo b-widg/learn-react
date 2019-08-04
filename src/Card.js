@@ -5,12 +5,11 @@ class Card extends Component {
     return (
       <React.Fragment>
         <section className='card-container'>
+          <header className='card-header'>
+            <span initials='JS' />
+            <h2>Jane Smith</h2>
+          </header>
           <main>
-            <header>
-              <span initials='JS' />
-              <h2>Jane Smith</h2>
-            </header>
-
             <ul>
               <li>
                 <span>B-day: </span>Jan. 1st 1980
