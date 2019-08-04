@@ -11,11 +11,33 @@ class MovementEvents extends Component {
     };
   }
 
+  handleOnMouseMove = e => {
+    console.log('e:', e);
+    this.setState({
+      mousePositionX: e.nativeEvent.offsetX,
+      mousePositionY: e.nativeEvent.offsetY
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    this.setState({
+      windowScrollY: Math.floor(window.scrollY)
+    });
+  };
+
   render() {
     return (
       <>
         <section>
-          <div>
+          <div onMouseMove={this.handleOnMouseMove}>
             <h3>Mouse Position:</h3>
             <p>x: {this.state.mousePositionX}</p>
             <p>y: {this.state.mousePositionY}</p>
